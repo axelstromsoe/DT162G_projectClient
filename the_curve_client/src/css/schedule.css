@@ -1,0 +1,86 @@
+#todays-schedule {
+    margin: 10px;
+
+    max-width: 700px;
+
+    contain: content;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.first-header-container {
+    padding: 10px 20px;
+
+    max-width: 700px;
+
+    background-color: red;
+}
+
+#todays-schedule-list {
+    margin: 25px 20px;
+}
+
+.lesson-description {
+    margin: 10px 0;
+
+    background-color: #eee;
+    border-radius: 5px;
+
+    transition: 1s;
+}
+
+.lesson-description li {
+    list-style: none;
+}
+
+#following-days {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    max-width: 720px;
+}
+
+.schedule-card {
+    margin: 10px;
+
+    width: 150px;
+    height: min-content;
+
+    contain: content;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.third-header-container {
+    padding: 10px;
+
+    width: 100%;
+    background-color: red;
+}
+
+.third-header-container h3 {
+    margin: auto;
+    text-align: center;
+}
+
+.schedule-card ul {
+    margin: 15px;
+}
+
+@media(min-width: 720px) {
+    .first-header-container {
+        margin: auto;
+    }
+
+    #todays-schedule {
+        margin: 10px auto;
+    }
+
+    #following-days {
+        margin: auto;
+    }
+}

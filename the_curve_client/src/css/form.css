@@ -1,0 +1,113 @@
+/* ----- GENERAL STYLE RULES ----- */
+
+form {
+    margin: 10px auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 440px;
+
+    border: 2px solid #dfdede;
+    border-radius: 5px;
+}
+
+legend {
+    padding: 20px 0;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+label,
+input,
+select,
+textarea {
+    padding: 5px;
+
+    width: 100%;
+    font-size: 1rem;
+}
+
+input,
+select,
+textarea {
+    margin-bottom: 10px;
+
+    background: transparent;
+    border: 2px solid #dfdede;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.form-button-container {
+    margin-top: 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    width: 100%;
+
+    border: 2px solid #dfdede;
+    border-radius: 0 0 5px 5px;
+}
+
+.form-button-container a {
+    padding: 5px;
+}
+
+.error-message {
+    padding: 5px;
+    display: block;
+    width: 100%;
+}
+
+.small-form {
+    width: 280px;
+}
+
+.big-form input,
+.big-form select,
+.big-form textarea {
+    margin-bottom: 20px;
+}
+
+.big-form .form-button-container {
+    padding: 20px 10px !important;
+}
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    width: 100%;
+}
+
+.label-input-container {
+    margin-right: 10px;
+    width: 100%;
+}
+
+@media(min-width: 700px) {
+
+    .vertical-form {
+        max-width: 700px;
+    }
+
+    .vertical-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
