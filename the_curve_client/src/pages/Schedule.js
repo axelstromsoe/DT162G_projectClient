@@ -7,7 +7,9 @@ import Aside from '../components/Aside';
 import CheckToken from '../functionality/CheckToken';
 import useFetchGet from '../functionality/useFetchGet';
 
-const Lessons = () => {
+import { Link } from 'react-router-dom';
+
+const Schedule = () => {
 
     // Check token
     CheckToken();
@@ -21,13 +23,11 @@ const Lessons = () => {
         <div id='page-content'>
             <main>
                 <h1>Schedule</h1>
-                {data && data.map((lesson) => (
-                    <div key={lesson.id}>{lesson.name}</div>
-                ))}
+                <Link to={'/lessons'}>Lessons</Link>
             </main>
             <Aside></Aside>
         </div>
     );
 }
  
-export default Lessons;
+export default Schedule;

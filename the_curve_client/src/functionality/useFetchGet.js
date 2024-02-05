@@ -2,34 +2,38 @@
 import { useState, useEffect } from 'react';
 
 const useFetchGet = (url) => {
-
-    const token = localStorage.getItem('token');
-
-    // Establish hooks
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    // Get token from local storage
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
         fetch(url, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/JSON',
+                'Content-Type': 'application/json',
                 'Authorization': token
             }
         })
-            .then((response) => response.json())
-            .then((data) => {
-                setData(data);
-                setLoading(false);
+            .then(res => {
+                if (!res.ok) {
+                    throw Error('Could not fetch the data for that resource')
+                }
+                return res.json();
             })
-            .catch((error) => {
-                setError(error);
-                setLoading(false);
-            });
+            .then(data => {
+                setData(data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                setIsLoading(false);
+                setError(error.message);
+            })
     }, [url]);
-    
-    return {data, loading, error};
+
+    return { data, isLoading, error };
 }
- 
+
 export default useFetchGet;

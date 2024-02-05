@@ -1,5 +1,6 @@
 // ----- IMPORTS -----
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -22,9 +23,9 @@ const Header = () => {
 
     return (
         <header>
-            <div id="logo-container">
-                <span>the curve</span>
-            </div>
+            <Link to={'/'} id="logo-container">
+                    <span>the curve</span>
+            </Link>
             <div id="menu-button" onClick={manageClick} className={menuClass}>
                 <div id="line"></div>
             </div>

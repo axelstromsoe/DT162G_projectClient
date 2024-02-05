@@ -1,24 +1,23 @@
-const FetchPost = async (url, body) => {
+const FetchGet = async (url) => {
 
     // Get token from local storage
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(url, {
-            method: 'POST',
+        const repsonse = await fetch(url, {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': token
-            },
-            body: JSON.stringify(body)
+            }
         });
 
-        const data = await response.json();
+        const data = await repsonse.json();
         return data;
     } catch (error) {
-        console.error(error);
+        console.log(error);
         return null;
     }
 }
  
-export default FetchPost;
+export default FetchGet;

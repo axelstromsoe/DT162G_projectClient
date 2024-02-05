@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 // Pages
 import Index from './pages/Index';
 import Login from './pages/Login';
+import Schedule from './pages/Schedule';
 import Lessons from './pages/Lessons';
 import NotFound from './pages/Notfound';
 
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Index></Index>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/schedule' element={<Schedule></Schedule>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
