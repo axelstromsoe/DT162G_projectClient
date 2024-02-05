@@ -5,14 +5,11 @@ import ToolButtons from '../components/ToolButtons'
 import Aside from '../components/Aside';
 
 // Functionality
-import CheckCredentials from '../CheckCredentials';
+
 
 // ----- EXPORT -----
 const Index = () => {
-
-    // Check if the user got credentials
-    CheckCredentials();
-
+    
     return (
         <div id='page-content'>
             <main>

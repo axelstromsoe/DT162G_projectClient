@@ -1,3 +1,19 @@
+/* ----- VARIABLES ----- */
+:root {
+    /* Background */
+    --bg1: #2b507a;
+    --bg2: #3b3b3b;
+    --bg3: #ffffff;
+    --bg4: #eeeeee;
+
+    /* Foreground */
+    --fg1: #eff2f7;
+    --fg2: #3b3b3b;
+
+    /* Details */
+    --red: #eb493a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +24,7 @@
 
 body {
     overflow-x: hidden;
-    background-color: #eeeeee;
+    background-color: var(--bg1);
 }
 
 #content {
@@ -21,7 +37,7 @@ main {
 
     max-width: 1280px;
     min-height: calc(100vh - 80px);
-    background-color: #ffffff;
+    background: transparent;
 }
 
 #login-main {
@@ -74,12 +90,12 @@ button {
 
     min-width: 100px;
 
-    color: #fff;
+    color: var(--fg1);
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.5rem;
 
-    background-color: #4b2cdd;
+    background-color: var(--bg2);
     border: none;
     border-radius: 5px;
 
@@ -88,5 +104,5 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: #2f1993;
+    background-color: #191919;
 }

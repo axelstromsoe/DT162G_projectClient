@@ -2,17 +2,13 @@
 
 // Components
 import Aside from '../components/Aside';
-import Table from '../components/Table';
 
 // Functionality
 import { useEffect, useState } from 'react';
-import CheckCredentials from '../CheckCredentials';
 
 
 const Lessons = () => {
 
-    // Check if the user got credentials
-    CheckCredentials()
 
     const url = 'http://localhost:3000/lessons';
     const token = localStorage.getItem('token');
@@ -114,7 +110,6 @@ const Lessons = () => {
                         <button>Add</button>
                     </div>
                 </form>
-                <Table titles={['Name', 'Course', 'Created', '']} type={'lessons'}></Table>
             </main>
             <Aside></Aside>
         </div>
