@@ -9,6 +9,7 @@
     /* Foreground */
     --fg1: #eff2f7;
     --fg2: #3b3b3b;
+    --fg3: #1b3756;
 
     /* Details */
     --red: #eb493a;
@@ -59,12 +60,16 @@ ul {
 
 h1 {
     margin: 20px auto;
+
     text-align: center;
+    font-size: 5rem;
+    color: var(--fg1);
 }
 
 h2,
 h3 {
     margin: 15px auto;
+    color: var(--fg1);
 }
 
 p {
@@ -73,6 +78,7 @@ p {
     font-size: .9rem;
     font-weight: lighter;
     line-height: 1.5rem;
+    color: var(--fg1);
 }
 
 ul {

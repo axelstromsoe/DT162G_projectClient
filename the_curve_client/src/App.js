@@ -9,6 +9,7 @@ import Index from './pages/Index';
 import Login from './pages/Login';
 import Schedule from './pages/Schedule';
 import Lessons from './pages/Lessons';
+import CreateLesson from './pages/CreateLesson';
 import NotFound from './pages/Notfound';
 
 // Functionality
@@ -27,6 +28,7 @@ function App() {
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/schedule' element={<Schedule></Schedule>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
+            <Route path='/createlesson' element={<CreateLesson></CreateLesson>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
         </div>

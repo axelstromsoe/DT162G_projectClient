@@ -152,7 +152,8 @@ const Create = () => {
                         required
                         name="description"
                         value={description}
-                        onChange={event => setDescription(event.target.value)}></textarea>
+                        onChange={event => setDescription(event.target.value)}>
+                        </textarea>
 
                     <div className="form-button-container">
                         <button>Add</button>

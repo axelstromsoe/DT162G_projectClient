@@ -31,7 +31,7 @@ const Aside = () => {
             </div>
             <nav>
                 <ul>
-                    <li><Link to='/schedule' onClick={asideInteraction}>SCHEDULE</Link></li>
+                    <li><Link to='/lessons' onClick={asideInteraction}>LESSONS</Link></li>
                     <li><Link to='' onClick={asideInteraction}>SUPPORT</Link></li>
                 </ul>
             </nav>
