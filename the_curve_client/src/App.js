@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Schedule from './pages/Schedule';
 import Lessons from './pages/Lessons';
 import CreateLesson from './pages/CreateLesson';
+import EditLesson from './pages/EditLesson';
 import NotFound from './pages/Notfound';
 
 // Functionality
@@ -29,6 +30,7 @@ function App() {
             <Route path='/schedule' element={<Schedule></Schedule>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
             <Route path='/createlesson' element={<CreateLesson></CreateLesson>}></Route>
+            <Route path='/editlesson/:id' element={<EditLesson></EditLesson>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
           </Routes>
         </div>

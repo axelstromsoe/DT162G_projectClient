@@ -1,18 +1,22 @@
 // ----- IMPORTS -----
 
 // Components
-import Aside from "../components/Aside";
+import Aside from '../components/Aside';
 
 // Functionality
-import CheckToken from "../functionality/CheckToken";
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import FetchPost from "../functionality/FetchPost";
+import CheckToken from '../functionality/CheckToken';
+import { useState, useEffect } from 'react';
+import useFetchGet from '../functionality/useFetchGet';
+import FetchGet from '../functionality/FetchGet';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
-const CreateLesson = () => {
-    
+const EditLesson = () => {
+
     // Check token 
     CheckToken();
+
+    // Fecth id from url
+    const { id } = useParams();
 
     // Establish hooks
     const [name, setName] = useState('');
@@ -24,28 +28,41 @@ const CreateLesson = () => {
     const navigate = useNavigate();
 
     const url = 'http://localhost:3000/lessons';
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+
+                // Fetch data from lesson
+                const data = await FetchGet(url + '/' + id);
+
+                // Set data for the established hooks
+                setName(data.name);
+                setCourse(data.course);
+                setDescription(data.description);
+
+            } catch (error) {
+                console.error('Error fetching data:', error.message);
+            }
+        };
+
+        fetchData();
+
+    }, [url]);
+
+
     const body = { 'name': name, 'course': course, 'description': description };
 
     const handleSubmit = async (event) => {
 
-        event.preventDefault();
-        setLoading(true);
-
-        // Try to post lesson to DB
-        const data = await FetchPost(url, body);
-        setLoading(false);
-
-        if (data.created) {
-            navigate('/lessons')
-        } else {
-            setMessage(data.message);
-        }
+        console.log('Patch');
     }
 
     return (
         <div id="page-content">
             <main>
-                <h1>Create lesson</h1>
+                <h1>Edit lesson</h1>
                 <form className="big-form" onSubmit={handleSubmit}>
                     <legend>Write lesson details</legend>
                     {message && <span className='error-message'>{message}</span>}
@@ -84,7 +101,8 @@ const CreateLesson = () => {
             </main>
             <Aside></Aside>
         </div>
+
     );
 }
 
-export default CreateLesson;
+export default EditLesson;

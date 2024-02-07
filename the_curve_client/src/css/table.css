@@ -69,9 +69,26 @@ table td::before {
     cursor: pointer;
 }
 
+.create-button-container {
+    margin: 10px auto;
+}
+
+.create-button {
+    padding: 15px 20px;
+
+    font-size: 1.2rem;
+    color: var(--fg3);
+    background-color: var(--bg3);
+}
+
+.create-button:hover {
+    background-color: var(--bg3);
+}
+
 @media(min-width: 800px) {
 
-    table {
+    table,
+    .create-button-container {
         margin: 10px 50px;
         min-width: none;
         max-width: 1000px;
@@ -114,7 +131,8 @@ table td::before {
 
 @media(min-width: 1100px) {
 
-   table {
-    margin: 10px auto;
-   }
+    table,
+    .create-button-container {
+        margin: 10px auto;
+    }
 }
