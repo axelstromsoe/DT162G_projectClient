@@ -13,7 +13,7 @@ aside {
 
     transform: translateX(300px);
 
-    transition: .75s;
+    transition: .5s;
 }
 
 aside nav {

@@ -1,19 +1,37 @@
-#todays-schedule {
+#toggle-button-container {
+    margin: 10px;
+
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.schedule-button {
+    background-color: var(--bg5);
+}
+
+.schedule-button:hover {
+    background-color: #102338;
+}
+
+#schedule-container {
     margin: 10px;
 
     max-width: 700px;
 
     contain: content;
-    background-color: #fff;
+    background-color: var(--fg1);
     border-radius: 5px;
 }
 
-.first-header-container {
+#schedule-header {
     padding: 10px 20px;
 
     max-width: 700px;
 
-    background-color: red;
+    background-color: var(--bg2);
 }
 
 #todays-schedule-list {
@@ -33,54 +51,14 @@
     list-style: none;
 }
 
-#following-days {
-    margin: 10px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    max-width: 720px;
-}
-
-.schedule-card {
-    margin: 10px;
-
-    width: 150px;
-    height: min-content;
-
-    contain: content;
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-.third-header-container {
-    padding: 10px;
-
-    width: 100%;
-    background-color: red;
-}
-
-.third-header-container h3 {
-    margin: auto;
-    text-align: center;
-}
-
-.schedule-card ul {
-    margin: 15px;
-}
-
 @media(min-width: 720px) {
-    .first-header-container {
+
+    #toggle-button-container,
+    #schedule-header {
         margin: auto;
     }
 
-    #todays-schedule {
+    #schedule-container {
         margin: 10px auto;
-    }
-
-    #following-days {
-        margin: auto;
     }
 }

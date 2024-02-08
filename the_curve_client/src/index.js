@@ -5,6 +5,7 @@ import './css/header.css';
 import './css/footer.css';
 import './css/aside.css';
 import './css/form.css';
+import './css/schedule.css';
 import './css/table.css';
 import App from './App';
 

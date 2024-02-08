@@ -59,7 +59,7 @@ table td::before {
 .table-button {
     text-align: right;
     font-weight: bold;
-    transition: .5s;
+    transition: .25s;
 }
 
 .table-button:hover {
