@@ -6,9 +6,9 @@ import Aside from '../components/Aside';
 // Functionality
 import CheckToken from '../functionality/CheckToken';
 import { useState, useEffect } from 'react';
-import useFetchGet from '../functionality/useFetchGet';
 import FetchGet from '../functionality/FetchGet';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import FetchPatch from '../functionality/FetchPatch';
 
 const EditLesson = () => {
 
@@ -56,7 +56,18 @@ const EditLesson = () => {
 
     const handleSubmit = async (event) => {
 
-        console.log('Patch');
+        event.preventDefault();
+        setLoading(true);
+
+        // Try to patch lesson to DB
+        const data = await FetchPatch(url + '/' + id, body);
+        setLoading(false);
+
+        if (data.created) {
+            navigate('/lessons')
+        } else {
+            setMessage(data.message);
+        }
     }
 
     return (

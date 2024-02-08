@@ -47,8 +47,6 @@ table td:last-child {
     border-bottom: 1px solid var(--fg1);
 }
 
-
-
 table td::before {
     content: attr(header_id);
 
@@ -97,17 +95,18 @@ table td::before {
 
     table thead {
         display: table-header-group;
+        background-color: var(--fg3);
     }
 
     table th {
-        padding: 15px 5px;
+        padding: 15px 10px;
 
         font-size: 1.1rem;
         text-align: left;
     }
 
     table tbody tr {
-        border-top: 3px solid var(--fg3);
+        border-bottom: 3px solid var(--fg3);
     }
 
     table td,
