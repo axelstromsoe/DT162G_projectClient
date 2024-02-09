@@ -11,9 +11,11 @@
     --fg1: #eff2f7;
     --fg2: #3b3b3b;
     --fg3: #1b3756;
+    --fg4: #c2c0c0;
 
     /* Details */
     --red: #eb493a;
+    --green: #6fcaa7;
 }
 
 * {
