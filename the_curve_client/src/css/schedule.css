@@ -60,7 +60,7 @@
 }
 
 .checkbox-circle-completed {
-    background-color: var(--green);
+    background-color: var(--fg5);
 }
 
 .checkbox-circle-incomplete {

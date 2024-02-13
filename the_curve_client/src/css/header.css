@@ -28,7 +28,7 @@ header {
 }
 
 #logo-container span:hover {
-    color: var(--red);
+    color: var(--fg5);
 }
 
 #menu-button {

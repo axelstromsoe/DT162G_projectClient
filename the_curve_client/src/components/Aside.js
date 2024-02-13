@@ -32,7 +32,7 @@ const Aside = () => {
             <nav>
                 <ul>
                     <li><Link to='/lessons' onClick={asideInteraction}>LESSONS</Link></li>
-                    <li><Link to='' onClick={asideInteraction}>SUPPORT</Link></li>
+                    <li><Link to='/about' onClick={asideInteraction}>ABOUT</Link></li>
                 </ul>
             </nav>
         </aside>

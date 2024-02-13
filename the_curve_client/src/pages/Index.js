@@ -1,3 +1,5 @@
+// ----- IMPORTS -----
+
 // Components
 import Aside from '../components/Aside';
 
@@ -17,29 +19,25 @@ const Index = () => {
     // Establish hooks
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
     const [data, setData] = useState(null);
+
     useEffect(() => {
         const fetchData = async () => {
-            setData(await FetchGet(url));
+            try {
+                const data = await FetchGet(url);
+
+                if (data.message) {
+                    setData(null);
+                } else {
+                    setData(data);
+                }
+            } catch (error) {
+                console.log(error);
+                setData(null);
+            }
         };
 
         fetchData();
     }, [date]);
-
-    const handleClick = (type) => {
-
-        // Establish new date
-        const newDate = new Date(date);
-
-        // Add one day to the new date
-        if (type === 'decrease') {
-            newDate.setDate(newDate.getDate() - 1)
-        } else {
-            newDate.setDate(newDate.getDate() + 1);
-        };
-
-        // Set the new date as the value in the date hook
-        setDate(newDate.toISOString().split('T')[0]);
-    }
 
     let lessons;
 
@@ -55,6 +53,22 @@ const Index = () => {
 
         // Filter the lessons according to the dates
         lessons = data.filter((lesson) => { return repetitionDates.includes(lesson.created.split('T')[0]) });
+    }
+
+    const handleClick = (type) => {
+
+        // Establish new date
+        const newDate = new Date(date);
+
+        // Add one day to the new date
+        if (type === 'decrease') {
+            newDate.setDate(newDate.getDate() - 1)
+        } else {
+            newDate.setDate(newDate.getDate() + 1);
+        };
+
+        // Set the new date as the value in the date hook
+        setDate(newDate.toISOString().split('T')[0]);
     }
 
     const checkLesson = (id) => {
@@ -127,7 +141,7 @@ const Index = () => {
                     break;
             }
         };
-        
+
         // Patch the lesson in the database
         FetchPatch(url + '/' + id, body);
     };
@@ -146,7 +160,7 @@ const Index = () => {
     };
 
     const getRepetiton = (lesson) => {
-        
+
         // Get time difference
         const timeDifference = getTimeDifference(lesson);
 

@@ -12,6 +12,7 @@
     --fg2: #3b3b3b;
     --fg3: #1b3756;
     --fg4: #c2c0c0;
+    --fg5: #759dc8;
 
     /* Details */
     --red: #eb493a;
@@ -114,4 +115,8 @@ button {
 button:hover {
     cursor: pointer;
     background-color: #191919;
+}
+
+img {
+    max-width: 500px;
 }
