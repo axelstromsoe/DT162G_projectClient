@@ -105,8 +105,8 @@ const EditLesson = () => {
                     </div>
                     <div className="form-button-container">
                         <Link to={'/lessons'}>Cancel</Link>
-                        {!loading && <button>Add</button>}
-                        {loading && <button disabled>Add</button>}
+                        {!loading && <button>Edit</button>}
+                        {loading && <button disabled>Edit</button>}
                     </div>
                 </form>
             </main>
