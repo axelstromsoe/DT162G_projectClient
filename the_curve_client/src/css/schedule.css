@@ -1,5 +1,6 @@
 #toggle-button-container {
     margin: 10px;
+    margin-top: 40px;
 
     max-width: 700px;
 
@@ -18,6 +19,7 @@
 
 #schedule-container {
     margin: 10px;
+    margin-bottom: 40px;
 
     max-width: 700px;
     min-height: 200px;
@@ -90,6 +92,22 @@
     color: var(--fg4);
 }
 
+#no-repetitions-container {
+    margin: 40px 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#no-repetitions-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--fg2);
+
+    transition: .5s;
+}
+
 @media(min-width: 720px) {
 
     #toggle-button-container,
@@ -99,5 +117,6 @@
 
     #schedule-container {
         margin: 10px auto;
+        margin-bottom: 40px;
     }
 }

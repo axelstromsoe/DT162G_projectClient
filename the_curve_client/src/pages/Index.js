@@ -53,6 +53,9 @@ const Index = () => {
 
         // Filter the lessons according to the dates
         lessons = data.filter((lesson) => { return repetitionDates.includes(lesson.created.split('T')[0]) });
+
+        // Set lessons to null if the array is empty
+        if (lessons.length === 0) {lessons = null};
     }
 
     const handleClick = (type) => {
@@ -184,7 +187,7 @@ const Index = () => {
     return (
         <div id='page-content'>
             <main>
-                <h1>Schedule</h1>
+                <h1>the schedule</h1>
                 <div id="toggle-button-container">
                     <button className='schedule-button' onClick={() => handleClick('decrease')}>Previous</button>
                     <button className='schedule-button' onClick={() => handleClick('increase')}>Next</button>
@@ -193,7 +196,7 @@ const Index = () => {
                     <div id="schedule-header">
                         <h2>{date}</h2>
                     </div>
-                    {data && lessons.map((lesson) => (
+                    {lessons && lessons.map((lesson) => (
                         <div className='lesson-container' key={'lesson-container-' + lesson.id}>
                             <div className='checkbox' key={'checkbox-' + lesson.id}>
                                 <div className={'checkbox-circle-' + getRepetiton(lesson)} key={'checkbox-circle-' + lesson.id} id={'checkbox-circle-' + lesson.id} onClick={() => checkLesson(lesson.id)}></div>
@@ -201,7 +204,19 @@ const Index = () => {
                             <span className={'lesson-info-' + getRepetiton(lesson)} key={'lesson-info-' + lesson.id} id={'lesson-info-' + lesson.id}>{lesson.name + ' - ' + lesson.course}</span>
                         </div>
                     ))}
+                    {!lessons && <div id='no-repetitions-container'>
+                        <span id='no-repetitions-message' >You have nothing to study today.</span>
+                    </div>
+                    }
                 </div>
+                <h2>What should you study?</h2>
+                <p>
+                    The schedule on this page tells you what you should on any given day based on the lessons you added to your account.
+                </p>
+                <h2>How does it work?</h2>
+                <p>
+                    Get started by adding new lessons under the page "lessons". A study schedule will then be automatically created, however be aware that it will be based on the date you added you added it.
+                </p>
             </main>
             <Aside></Aside>
         </div>

@@ -77,9 +77,9 @@ h3 {
 }
 
 p {
-    margin: auto;
+    margin: 10px auto;
 
-    font-size: .9rem;
+    font-size: 1.1rem;
     font-weight: lighter;
     line-height: 1.5rem;
     color: var(--fg1);
@@ -118,5 +118,8 @@ button:hover {
 }
 
 img {
+    margin: auto;
+
+    display: block;
     max-width: 500px;
 }
