@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 // Pages
 import Index from './pages/Index';
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Lessons from './pages/Lessons';
 import CreateLesson from './pages/CreateLesson';
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Index></Index>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/signup' element={<SignUp></SignUp>}></Route>
             <Route path='/about' element={<About></About>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
             <Route path='/createlesson' element={<CreateLesson></CreateLesson>}></Route>

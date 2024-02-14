@@ -79,7 +79,7 @@ const Login = () => {
                         />
                     </div>
                     <div className="form-button-container">
-                        <Link>Sign up</Link>
+                        <Link to={'/signup'}>Sign up</Link>
                         {!loading && <button className='login-button'>Log in</button>}
                         {loading && <button className='login-button' disabled>Log in</button>}
                     </div>

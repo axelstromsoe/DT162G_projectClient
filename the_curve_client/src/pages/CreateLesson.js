@@ -18,11 +18,13 @@ const CreateLesson = () => {
     const [name, setName] = useState('');
     const [course, setCourse] = useState('');
     const [description, setDescription] = useState('');
+
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
 
     const navigate = useNavigate();
 
+    // Establish url and body for the fetch
     const url = 'http://localhost:3000/lessons';
     const body = { 'name': name, 'course': course, 'description': description };
 
@@ -35,9 +37,14 @@ const CreateLesson = () => {
         const data = await FetchPost(url, body);
         setLoading(false);
 
+        // Check if the request was successfull
         if (data.created) {
+
+            // Navigate the user to the lesson page
             navigate('/lessons')
         } else {
+
+            // Set a messages
             setMessage(data.message);
         }
     }
