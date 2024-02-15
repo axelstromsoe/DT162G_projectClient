@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import FetchPost from "../functionality/FetchPost";
 
-const SignUp = () => {
+const Signup = () => {
 
     // Establish hooks
     const [firstname, setFirstname] = useState('');
@@ -123,4 +123,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp;
+export default Signup;

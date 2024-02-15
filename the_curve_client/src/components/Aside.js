@@ -32,6 +32,7 @@ const Aside = () => {
             <nav>
                 <ul>
                     <li><Link to='/lessons' onClick={asideInteraction}>LESSONS</Link></li>
+                    <li><Link to='/profile' onClick={asideInteraction}>PROFILE</Link></li>
                     <li><Link to='/about' onClick={asideInteraction}>ABOUT</Link></li>
                 </ul>
             </nav>

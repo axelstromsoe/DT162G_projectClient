@@ -7,9 +7,10 @@ import Footer from './components/Footer'
 // Pages
 import Index from './pages/Index';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import About from './pages/About';
+import Signup from './pages/Signup';
 import Lessons from './pages/Lessons';
+import Profile from './pages/Profile';
+import About from './pages/About';
 import CreateLesson from './pages/CreateLesson';
 import EditLesson from './pages/EditLesson';
 import NotFound from './pages/Notfound';
@@ -28,9 +29,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Index></Index>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
-            <Route path='/signup' element={<SignUp></SignUp>}></Route>
-            <Route path='/about' element={<About></About>}></Route>
+            <Route path='/signup' element={<Signup></Signup>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
+            <Route path='/profile' element={<Profile></Profile>}></Route>
+            <Route path='/about' element={<About></About>}></Route>
             <Route path='/createlesson' element={<CreateLesson></CreateLesson>}></Route>
             <Route path='/editlesson/:id' element={<EditLesson></EditLesson>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>

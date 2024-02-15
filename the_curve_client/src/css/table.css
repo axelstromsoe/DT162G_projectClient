@@ -69,6 +69,8 @@ table td::before {
 
 .create-button-container {
     margin: 10px auto;
+
+    max-width: 300px;
 }
 
 .create-button {
