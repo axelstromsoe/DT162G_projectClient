@@ -209,13 +209,13 @@ const Index = () => {
                     </div>
                     }
                 </div>
+                <h2>How does it work?</h2>
+                <p>
+                    Get started by adding new lessons under the page "lessons". A study schedule will then be automatically created based on the date you added the lesson to the account.
+                </p>
                 <h2>What should you study?</h2>
                 <p>
                     The schedule on this page tells you what you should on any given day based on the lessons you added to your account.
-                </p>
-                <h2>How does it work?</h2>
-                <p>
-                    Get started by adding new lessons under the page "lessons". A study schedule will then be automatically created, however be aware that it will be based on the date you added you added it.
                 </p>
             </main>
             <Aside></Aside>

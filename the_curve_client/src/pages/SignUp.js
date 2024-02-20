@@ -34,7 +34,7 @@ const Signup = () => {
         setLoading(true);
 
         // Check if the password and password check is the same
-        if (password != passwordCheck) {
+        if (password !== passwordCheck) {
             setMessage('The passwords does not match.')
             return null;
         }

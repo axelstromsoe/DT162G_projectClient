@@ -80,12 +80,17 @@ textarea {
     border-radius: 0 0 5px 5px;
 }
 
-.form-button-container a {
+.form-button-container a,
+.form-button-container span {
     padding: 5px 20px;
 
     font-weight: bold;
     text-decoration: none;
     color: var(--fg2);
+}
+
+.form-button-container span:hover {
+    cursor: pointer;
 }
 
 .form-button-container a:hover {

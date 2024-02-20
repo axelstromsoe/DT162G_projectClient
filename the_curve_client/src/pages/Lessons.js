@@ -22,7 +22,7 @@ const Lessons = () => {
     const { data, isLoading, error } = useFetchGet(url);
 
     const handleEdit = (id) => {
-        
+
         // Navigate to the edit page
         navigate('/editlesson/' + id);
     }
@@ -68,6 +68,8 @@ const Lessons = () => {
                         </tbody>
                     </table>
                 }
+                {isLoading && <span>Loading...</span>}
+                {error && <span>{error}</span>}
             </main>
             <Aside></Aside>
         </div>

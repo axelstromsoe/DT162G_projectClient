@@ -7,6 +7,7 @@ import './css/aside.css';
 import './css/form.css';
 import './css/schedule.css';
 import './css/table.css';
+import './css/profile.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
