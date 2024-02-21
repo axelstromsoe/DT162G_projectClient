@@ -32,15 +32,19 @@
     justify-content: right;
 }
 
-#user-info-button-container button:first-child {
-    margin-right: 10px;
-
+#user-info-button-container button {
     background-color: var(--fg1);
     color: var(--bg1);
 }
 
+#user-info-button-container button:first-child {
+    margin-right: 10px;
+}
+
 #user-info-button-container button:last-child {
+    margin-left: 10px;
     background-color: var(--red);
+    color: var(--fg1);
 }
 
 dialog:modal {

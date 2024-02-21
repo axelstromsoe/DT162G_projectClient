@@ -17,11 +17,11 @@ const useFetchGet = (url) => {
                 'Authorization': token
             }
         })
-            .then(res => {
-                if (!res.ok) {
+            .then(response => {
+                if (!response.ok) {
                     throw Error('Could not fetch the data for that resource')
                 }
-                return res.json();
+                return response.json();
             })
             .then(data => {
                 setData(data);

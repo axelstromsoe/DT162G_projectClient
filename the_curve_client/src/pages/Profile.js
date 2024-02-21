@@ -4,12 +4,16 @@
 import Aside from "../components/Aside";
 
 // Functionality
+import CheckToken from '../functionality/CheckToken';
 import useFetchGet from "../functionality/useFetchGet";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import FetchDelete from '../functionality/FetchDelete';
 
 const Profile = () => {
+
+    // Check token 
+    CheckToken();
 
     // Establish hooks
     const [password, setPassword] = useState('');
@@ -25,7 +29,12 @@ const Profile = () => {
     // Fetch the data from the user
     const { data, isLoading, error } = useFetchGet(url)
 
+    const handleChange = () => {
+        navigate('/changepassword');
+    }
+
     const handleEdit = () => {
+        navigate('/edituser');
     }
 
     const initDelete = () => {
@@ -63,9 +72,9 @@ const Profile = () => {
     return (
         <div id='page-content'>
             <main>
-                <h1>Profile</h1>
+                <h1>profile</h1>
                 <div id="user-info-container">
-                    <h2>User information</h2>
+                    <h2>user information</h2>
                     {data && <ul>
                         <li><span>name: </span>{data.firstname + ' ' + data.lastname}</li>
                         <li><span>username: </span>{data.username}</li>
@@ -75,6 +84,7 @@ const Profile = () => {
                     {error && <span>{error}</span>}
                 </div>
                 <div id="user-info-button-container">
+                    <button onClick={handleChange}>Change password</button>
                     <button onClick={handleEdit}>Edit</button>
                     <button onClick={initDelete}>Delete</button>
                 </div>

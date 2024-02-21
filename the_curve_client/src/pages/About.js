@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div id='page-content'>
             <main>
-                <h1>About</h1>
+                <h1>about</h1>
                 <h2>What is the curve?</h2>
                 <p>
                     The Ebbinghaus Curve, formulated by the German psychologist Hermann Ebbinghaus in the 19th century, is a groundbreaking theory that sheds light on how human memory performance changes over time. This curve forms the basis for understanding memory processes and has profound implications for education, learning, and cognitive psychology.

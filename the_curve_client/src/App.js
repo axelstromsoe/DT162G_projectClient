@@ -10,6 +10,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Lessons from './pages/Lessons';
 import Profile from './pages/Profile';
+import EditUser from './pages/EditUser';
+import ChangePassword from './pages/ChangePassword';
 import About from './pages/About';
 import CreateLesson from './pages/CreateLesson';
 import EditLesson from './pages/EditLesson';
@@ -32,6 +34,8 @@ function App() {
             <Route path='/signup' element={<Signup></Signup>}></Route>
             <Route path='/lessons' element={<Lessons></Lessons>}></Route>
             <Route path='/profile' element={<Profile></Profile>}></Route>
+            <Route path='/edituser' element={<EditUser></EditUser>}></Route>
+            <Route path='/changepassword' element={<ChangePassword></ChangePassword>}></Route>
             <Route path='/about' element={<About></About>}></Route>
             <Route path='/createlesson' element={<CreateLesson></CreateLesson>}></Route>
             <Route path='/editlesson/:id' element={<EditLesson></EditLesson>}></Route>

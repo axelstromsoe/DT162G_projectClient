@@ -7,40 +7,36 @@ import Aside from '../components/Aside';
 import CheckToken from '../functionality/CheckToken';
 import { useState, useEffect } from 'react';
 import FetchGet from '../functionality/FetchGet';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import FetchPatch from '../functionality/FetchPatch';
 
-const EditLesson = () => {
+const EditUser = () => {
 
     // Check token 
     CheckToken();
 
-    // Fecth id from url
-    const { id } = useParams();
-
     // Establish hooks
-    const [name, setName] = useState('');
-    const [course, setCourse] = useState('');
-    const [description, setDescription] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
 
     const navigate = useNavigate();
 
-    const url = 'http://localhost:3000/lessons';
+    const url = 'http://localhost:3000/users';
 
-    // Fetch the existing data for the lesson
+    // Fetch the existing data for the user
     useEffect(() => {
         const fetchData = async () => {
             try {
 
                 // Fetch data from lesson
-                const data = await FetchGet(url + '/' + id);
+                const data = await FetchGet(url);
 
                 // Set data for the established hooks
-                setName(data.name);
-                setCourse(data.course);
-                setDescription(data.description);
+                setFirstname(data.firstname);
+                setLastname(data.lastname);
 
             } catch (error) {
                 console.error('Error fetching data:', error.message);
@@ -52,7 +48,7 @@ const EditLesson = () => {
     }, [url]);
 
     // Create the body for the patch request
-    const body = { 'name': name, 'course': course, 'description': description };
+    const body = { 'firstname': firstname, 'lastname': lastname, 'password': password };
 
     const handleSubmit = async (event) => {
 
@@ -60,12 +56,12 @@ const EditLesson = () => {
         setLoading(true);
 
         // Try to send a patch request
-        const data = await FetchPatch(url + '/' + id, body);
+        const data = await FetchPatch(url, body);
         setLoading(false);
 
         // Check if the request was successful
         if (data.created) {
-            navigate('/lessons')
+            navigate('/profile')
         } else {
             setMessage(data.message);
         }
@@ -74,41 +70,43 @@ const EditLesson = () => {
     return (
         <div id="page-content">
             <main>
-                <h1>Edit lesson</h1>
+                <h1>Edit user</h1>
                 <form className="big-form" onSubmit={handleSubmit}>
-                    <legend>Write lesson details</legend>
+                    <legend>Write user details</legend>
                     {message && <span className='error-message'>{message}</span>}
                     <div className="label-input-container">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="firstname">First name</label>
                         <input
                             type="text"
                             required
-                            name="name"
-                            id="name"
-                            value={name}
-                            onChange={event => setName(event.target.value)}
+                            name="firstname"
+                            id="firstname"
+                            value={firstname}
+                            onChange={event => setFirstname(event.target.value)}
                         />
-                        <label htmlFor="course">Course</label>
+                        <label htmlFor="lastname">Last name</label>
                         <input
                             type="text"
                             required
-                            name="course"
-                            id="course"
-                            value={course}
-                            onChange={event => setCourse(event.target.value)}
+                            name="lastname"
+                            id="lastname"
+                            value={lastname}
+                            onChange={event => setLastname(event.target.value)}
                         />
-                        <label htmlFor="description">Beskrivning</label>
-                        <textarea
+                        <label htmlFor="password">Write your password to verify your identity</label>
+                        <input
+                            type="password"
                             required
-                            name="description"
-                            value={description}
-                            onChange={event => setDescription(event.target.value)}>
-                        </textarea>
+                            name="password"
+                            id="password"
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
                     </div>
                     <div className="form-button-container">
-                        <Link to={'/lessons'}>Cancel</Link>
-                        {!loading && <button>Edit</button>}
-                        {loading && <button disabled>Edit</button>}
+                        <Link to={'/profile'}>Cancel</Link>
+                        {!loading && <button>Save</button>}
+                        {loading && <button disabled>Save</button>}
                     </div>
                 </form>
             </main>
@@ -117,4 +115,4 @@ const EditLesson = () => {
     );
 }
 
-export default EditLesson;
+export default EditUser;

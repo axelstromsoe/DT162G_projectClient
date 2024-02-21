@@ -40,7 +40,7 @@ const Lessons = () => {
     return (
         <div id='page-content'>
             <main>
-                <h1>Lessons</h1>
+                <h1>lessons</h1>
                 <div className="create-button-container">
                     <button className='create-button' onClick={() => navigate('/createlesson')}>Add new lesson</button>
                 </div>
@@ -68,8 +68,8 @@ const Lessons = () => {
                         </tbody>
                     </table>
                 }
-                {isLoading && <span>Loading...</span>}
-                {error && <span>{error}</span>}
+                {isLoading && <span className='data-message'>Loading...</span>}
+                {error && <span className='data-message'>No lessons found.</span>}
             </main>
             <Aside></Aside>
         </div>
