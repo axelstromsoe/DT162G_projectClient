@@ -8,6 +8,7 @@ import CheckToken from '../functionality/CheckToken';
 import useFetchGet from '../functionality/useFetchGet';
 import FetchDelete from '../functionality/FetchDelete';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Lessons = () => {
 
@@ -20,6 +21,26 @@ const Lessons = () => {
 
     // Establish hooks
     const { data, isLoading, error } = useFetchGet(url);
+    const [searchInput, setSearchInput] = useState('');
+
+    const handleChange = (event) => {
+
+        // Change the searchInput hook
+        setSearchInput(event.target.value);
+    };
+
+    let lessons = data;
+
+    if (searchInput.length > 0) {
+
+        // Change the searchInput value to lowercase to enable non case sensetive searching
+        let searchInputLowerCase = searchInput.toLowerCase();
+
+        // Filter the lesson array by matching the searchInput value with the object value
+        lessons = data.filter((lesson) => {
+            return lesson.course.toLowerCase().match(searchInputLowerCase) || lesson.name.toLowerCase().match(searchInputLowerCase)
+        });
+    }
 
     const handleEdit = (id) => {
 
@@ -44,6 +65,16 @@ const Lessons = () => {
                 <div className="create-button-container">
                     <button className='create-button' onClick={() => navigate('/createlesson')}>Add new lesson</button>
                 </div>
+                <div id="searchbar-container">
+                    <input
+                        type="text"
+                        name="searchbar"
+                        id="searchbar"
+                        placeholder="Search here"
+                        onChange={handleChange}
+                        value={searchInput}
+                    />
+                </div>
                 {data &&
                     <table>
                         <thead>
@@ -56,7 +87,7 @@ const Lessons = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((lesson) => (
+                            {lessons.map((lesson) => (
                                 <tr key={'tr:' + lesson.id} id={lesson.id}>
                                     <td key={'name:' + lesson.id}>{lesson.name}</td>
                                     {lesson.course && <td key={'course: ' + lesson.id}>{lesson.course}</td>}

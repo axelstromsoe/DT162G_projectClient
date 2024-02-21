@@ -85,6 +85,19 @@ table td::before {
     background-color: var(--bg3);
 }
 
+#searchbar-container {
+    margin: auto;
+
+    min-width: 300px;
+    max-width: 400px;
+}
+
+#searchbar {
+    margin: 10px 0;
+
+    max-width: 400px;
+}
+
 @media(min-width: 800px) {
 
     table,
@@ -128,6 +141,13 @@ table td::before {
     table td::before {
         display: none;
     }
+
+    #searchbar-container {
+        margin: auto 50px;
+    
+        min-width: none;
+        max-width: 1000px;
+    }
 }
 
 @media(min-width: 1100px) {
@@ -135,5 +155,9 @@ table td::before {
     table,
     .create-button-container {
         margin: 10px auto;
+    }
+
+    #searchbar-container {
+        margin: auto;
     }
 }

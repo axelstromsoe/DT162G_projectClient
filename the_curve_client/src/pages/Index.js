@@ -43,7 +43,7 @@ const Index = () => {
 
     if (data) {
 
-        // Create arrays with desired repetitions pattern and for the repetition dates
+        // Create arrays with the desired repetition pattern and the repetition dates
         const datePattern = [1, 4, 7, 14, 28];
         const repetitionDates = datePattern.map((i) => {
             const repetitionDate = new Date(date);
