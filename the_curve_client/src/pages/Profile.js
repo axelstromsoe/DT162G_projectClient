@@ -6,9 +6,9 @@ import Aside from "../components/Aside";
 // Functionality
 import CheckToken from '../functionality/CheckToken';
 import useFetchGet from "../functionality/useFetchGet";
+import FetchDelete from '../functionality/FetchDelete';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import FetchDelete from '../functionality/FetchDelete';
 
 const Profile = () => {
 

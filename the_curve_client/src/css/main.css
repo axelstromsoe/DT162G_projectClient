@@ -126,9 +126,26 @@ button:hover {
     background-color: #191919;
 }
 
+#homepage-button-container {
+    max-width: 700px;
+    padding: 10px;
+}
+
+#homepage-button {
+    background-color: var(--fg1);
+    color: var(--bg1);
+}
+
 img {
     margin: auto;
 
     display: block;
     max-width: 500px;
+}
+
+@media(min-width: 700px) {
+
+    #homepage-button-container {
+        margin: auto;
+    }
 }
