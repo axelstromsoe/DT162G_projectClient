@@ -45,7 +45,7 @@ const Login = () => {
 
             // Navigate to index page
             navigate('/');
-            console.log(data.message);
+            
         } else {
 
             // Set message
